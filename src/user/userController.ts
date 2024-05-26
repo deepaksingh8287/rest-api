@@ -47,8 +47,11 @@ const createUsers = async (req: Request, res: Response, next: NextFunction) => {
   });
     //process
     //response
-    res.json({
+    res.status(201).json({
         accessToken: token,
     });
 };
-export { createUsers };
+const loginUser=async (req: Request, res: Response, next: NextFunction)=>{
+  const { email, password } = req.body;
+}
+export { createUsers,loginUser };
