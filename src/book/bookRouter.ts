@@ -7,7 +7,7 @@ const bookRouter=express.Router();
 //routes
 const upload=multer({
    dest:path.resolve(__dirname,"../../public/data/uploader") ,
-   limits:{fileSize:3e7}
+   limits:{fileSize: 10 * 1024 * 1024}
 })
 bookRouter.post("/",upload.fields([
     {
@@ -19,4 +19,5 @@ bookRouter.post("/",upload.fields([
         maxCount:1
     }
 ]),createBook)
+
 export default bookRouter
