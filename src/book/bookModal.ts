@@ -7,6 +7,7 @@ const bookSchema=new mongoose.Schema<Book>({
     },
     author:{
         type: mongoose.Schema.Types.ObjectId,
+        ref:"User",
         required:true
     },
     genre:{
@@ -21,5 +22,5 @@ const bookSchema=new mongoose.Schema<Book>({
     
 })
 
-const BookModal=mongoose.model<Book>("Book",bookSchema)
-export default BookModal
+const bookModal=mongoose.model<Book>("Book",bookSchema)
+export default bookModal
